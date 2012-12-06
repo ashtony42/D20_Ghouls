@@ -1,0 +1,16 @@
+<%
+std_opts = "--no-source --color --format pretty"
+%>
+
+default: -p selenium
+watir: DRIVER=WATIR <%= std_opts %> --tags ~@selenium_only BROWSER=firefox
+selenium: DRIVER=SELENIUM <%= std_opts %> --tags ~@watir_only BROWSER=firefox
+
+firefox: BROWSER=firefox -p default DRIVER=SELENIUM <%= std_opts %>
+firefox_debug: -p firefox DEBUG=true
+ie: BROWSER=ie -p default DRIVER=SELENIUM <%= std_opts %>
+ie_debug: -p ia DEBUG=true
+chrome: BROWSER=chrome -p default DRIVER=SELENIUM <%= std_opts %>
+chrome_debug: -p chrome DEBUG=true
+
+

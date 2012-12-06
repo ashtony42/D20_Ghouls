@@ -1,0 +1,9 @@
+source "http://rubygems.org"
+
+gem 'rake'
+gem 'watir'
+gem 'cucumber'
+gem 'pry'
+gem 'rspec'
+
+gemspec
